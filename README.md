@@ -1,10 +1,10 @@
 # Android Design System
 
-A modern, flexible design system built with Jetpack Compose, providing a comprehensive set of reusable UI components, consistent theming, and design tokens for Android applications.
+A modern, flexible design system library example built with Jetpack Compose, providing a comprehensive set of reusable UI components, consistent theming, and design tokens for Android applications.
 
 ![Platform](https://img.shields.io/badge/platform-Android-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg)](https://android-arsenal.com/api?level=21)
+[![API](https://img.shields.io/badge/API-26%2B-brightgreen.svg)](https://android-arsenal.com/api?level=26)
 
 ## Features
 
@@ -15,40 +15,9 @@ A modern, flexible design system built with Jetpack Compose, providing a compreh
 - ♿ **Accessibility**: Built-in accessibility support with semantic properties
 - 📚 **Documentation**: Comprehensive documentation and usage examples
 
-## Installation
-
-Add the following dependency to your app's `build.gradle` file:
-
-```gradle
-dependencies {
-    implementation 'com.github.rrohaill:design-system:1.0.0'
-}
-```
-
-Add the Maven repository in your root `build.gradle` file:
-
-```gradle
-allprojects {
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-
 ## Setup
 
-1. Initialize the Design System in your Application class:
-
-```kotlin
-class MyApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        DesignSystem.init()
-    }
-}
-```
-
-2. Wrap your app content with the Design System theme:
+1. Wrap your app content with the Design System theme:
 
 ```kotlin
 @Composable
@@ -64,37 +33,35 @@ fun MyApp() {
 ### Buttons
 
 ```kotlin
-import com.designsystem.components.Button
 
 @Composable
 fun MyScreen() {
-    Button(
-        text = "Click Me",
-        onClick = { /* Handle click */ }
-    )
-    
-    Button.Secondary(
-        text = "Cancel",
-        onClick = { /* Handle click */ }
-    )
+   DsPrimaryButton(
+                leadingIcon = {
+                    DsIcon(UiImage.of(R.drawable.ic_person))
+                },
+                label = {
+                    DsText("DsPrimaryButtonM".uiText())
+                },
+                onClick = {}
+            )
 }
 ```
 
 ### Typography
 
 ```kotlin
-import com.designsystem.theme.Typography
 
 @Composable
 fun TextExample() {
-    Text(
+    DsText(
         text = "Heading",
-        style = Typography.h1
+        style = dsTypography.HeadingM
     )
     
     Text(
         text = "Body text",
-        style = Typography.body1
+        style = dsTypography.TitleS
     )
 }
 ```
@@ -102,16 +69,22 @@ fun TextExample() {
 ### Colors
 
 ```kotlin
-import com.designsystem.theme.Colors
 
 @Composable
 fun ColorExample() {
-    Surface(
-        color = Colors.primary,
+    DsSurface(
+        color = dsColors.backgroundPrimary,
+        content = { /* Content */ }
+    )
+
+ DsScaffold(
+        color = dsColors.backgroundPrimary,
         content = { /* Content */ }
     )
 }
 ```
+
+## And many more, you can explore in the code sample.
 
 ## Documentation
 
