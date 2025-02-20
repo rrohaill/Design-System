@@ -86,13 +86,7 @@ fun ColorExample() {
 
 ## And many more, you can explore in the code sample.
 
-## Documentation
 
-For detailed documentation and more examples, visit our [Wiki](https://github.com/rrohaill/Design-System/wiki).
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for more details.
 
 ## License
 
